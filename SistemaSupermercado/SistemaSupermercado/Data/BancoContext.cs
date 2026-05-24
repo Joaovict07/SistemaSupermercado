@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SistemaSupermercado.Modelo;
+using Pomelo.EntityFrameworkCore.MySql;
 
 namespace SistemaSupermercado.Data
 {
@@ -10,8 +8,15 @@ namespace SistemaSupermercado.Data
     {
         public DbSet<Produto> Produtos { get; set; }
 
-        public BancoContext(DbContextOptions<BancoContext> options) : base(options)
-        { 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            // Verifica se a conexão já não foi configurada antes
+            if (!optionsBuilder.IsConfigured)
+            {
+                string conexao = "Server=localhost;User ID=root;Password=12345;Database=supermercadoDB";
+
+                optionsBuilder.UseMySql(conexao, ServerVersion.AutoDetect(conexao));
+            }
         }
     }
 }

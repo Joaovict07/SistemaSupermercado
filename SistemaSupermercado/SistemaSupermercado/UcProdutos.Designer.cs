@@ -35,21 +35,19 @@
             lblNomeProd = new Label();
             panel1Produtos = new Panel();
             panel2Produtos = new Panel();
-            lblCategoria = new Label();
-            lblQtd = new Label();
-            lblPreço = new Label();
-            txtCodigo = new TextBox();
-            txtNomeProd = new TextBox();
-            txtQtd = new TextBox();
-            txtPreço = new TextBox();
-            cboCategoria = new ComboBox();
-            btnCadastrar = new Button();
-            btnAtualizar = new Button();
-            btnExcluir = new Button();
             btnLimpar = new Button();
+            btnExcluir = new Button();
+            btnAtualizar = new Button();
+            btnCadastrar = new Button();
+            cboCategoria = new ComboBox();
+            txtPreço = new TextBox();
+            txtQtd = new TextBox();
+            txtNomeProd = new TextBox();
+            txtCodigo = new TextBox();
+            lblPreço = new Label();
+            lblQtd = new Label();
+            lblCategoria = new Label();
             panel1 = new Panel();
-            txtBuscaProdutos = new TextBox();
-            btnBusca = new Button();
             dataGridView1 = new DataGridView();
             CódigoProduto = new DataGridViewTextBoxColumn();
             NomeProduto = new DataGridViewTextBoxColumn();
@@ -57,6 +55,8 @@
             Estoque = new DataGridViewTextBoxColumn();
             Preço = new DataGridViewTextBoxColumn();
             Data = new DataGridViewTextBoxColumn();
+            btnBusca = new Button();
+            txtBuscaProdutos = new TextBox();
             panel1Produtos.SuspendLayout();
             panel2Produtos.SuspendLayout();
             panel1.SuspendLayout();
@@ -137,97 +137,19 @@
             panel2Produtos.Size = new Size(810, 265);
             panel2Produtos.TabIndex = 5;
             // 
-            // lblCategoria
+            // btnLimpar
             // 
-            lblCategoria.AutoSize = true;
-            lblCategoria.Font = new Font("Segoe UI", 10F);
-            lblCategoria.Location = new Point(10, 93);
-            lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(68, 19);
-            lblCategoria.TabIndex = 4;
-            lblCategoria.Text = "Categoria";
-            // 
-            // lblQtd
-            // 
-            lblQtd.AutoSize = true;
-            lblQtd.Font = new Font("Segoe UI", 10F);
-            lblQtd.Location = new Point(10, 129);
-            lblQtd.Name = "lblQtd";
-            lblQtd.Size = new Size(157, 19);
-            lblQtd.TabIndex = 5;
-            lblQtd.Text = "Quantidade em Estoque";
-            // 
-            // lblPreço
-            // 
-            lblPreço.AutoSize = true;
-            lblPreço.Font = new Font("Segoe UI", 10F);
-            lblPreço.Location = new Point(10, 171);
-            lblPreço.Name = "lblPreço";
-            lblPreço.Size = new Size(71, 19);
-            lblPreço.TabIndex = 6;
-            lblPreço.Text = "Preço (R$)";
-            // 
-            // txtCodigo
-            // 
-            txtCodigo.Location = new Point(212, 17);
-            txtCodigo.Name = "txtCodigo";
-            txtCodigo.Size = new Size(135, 23);
-            txtCodigo.TabIndex = 7;
-            // 
-            // txtNomeProd
-            // 
-            txtNomeProd.Location = new Point(212, 54);
-            txtNomeProd.Name = "txtNomeProd";
-            txtNomeProd.Size = new Size(135, 23);
-            txtNomeProd.TabIndex = 8;
-            // 
-            // txtQtd
-            // 
-            txtQtd.Location = new Point(212, 125);
-            txtQtd.Name = "txtQtd";
-            txtQtd.Size = new Size(135, 23);
-            txtQtd.TabIndex = 9;
-            // 
-            // txtPreço
-            // 
-            txtPreço.Location = new Point(212, 167);
-            txtPreço.Name = "txtPreço";
-            txtPreço.Size = new Size(135, 23);
-            txtPreço.TabIndex = 10;
-            // 
-            // cboCategoria
-            // 
-            cboCategoria.FormattingEnabled = true;
-            cboCategoria.Location = new Point(212, 89);
-            cboCategoria.Name = "cboCategoria";
-            cboCategoria.Size = new Size(135, 23);
-            cboCategoria.TabIndex = 11;
-            // 
-            // btnCadastrar
-            // 
-            btnCadastrar.BackColor = Color.DeepSkyBlue;
-            btnCadastrar.FlatAppearance.BorderColor = Color.Black;
-            btnCadastrar.FlatStyle = FlatStyle.Popup;
-            btnCadastrar.Font = new Font("Segoe UI", 10F);
-            btnCadastrar.Location = new Point(22, 216);
-            btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(98, 35);
-            btnCadastrar.TabIndex = 12;
-            btnCadastrar.Text = "Cadastrar";
-            btnCadastrar.UseVisualStyleBackColor = false;
-            // 
-            // btnAtualizar
-            // 
-            btnAtualizar.BackColor = Color.Khaki;
-            btnAtualizar.FlatAppearance.BorderColor = Color.Black;
-            btnAtualizar.FlatStyle = FlatStyle.Popup;
-            btnAtualizar.Font = new Font("Segoe UI", 10F);
-            btnAtualizar.Location = new Point(155, 216);
-            btnAtualizar.Name = "btnAtualizar";
-            btnAtualizar.Size = new Size(98, 35);
-            btnAtualizar.TabIndex = 13;
-            btnAtualizar.Text = "Atualizar";
-            btnAtualizar.UseVisualStyleBackColor = false;
+            btnLimpar.BackColor = Color.Gainsboro;
+            btnLimpar.FlatAppearance.BorderColor = Color.Black;
+            btnLimpar.FlatStyle = FlatStyle.Popup;
+            btnLimpar.Font = new Font("Segoe UI", 10F);
+            btnLimpar.Location = new Point(409, 218);
+            btnLimpar.Name = "btnLimpar";
+            btnLimpar.Size = new Size(98, 33);
+            btnLimpar.TabIndex = 15;
+            btnLimpar.Text = "Limpar";
+            btnLimpar.UseVisualStyleBackColor = false;
+            btnLimpar.Click += btnLimpar_Click;
             // 
             // btnExcluir
             // 
@@ -241,19 +163,102 @@
             btnExcluir.TabIndex = 14;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += btnExcluir_Click;
             // 
-            // btnLimpar
+            // btnAtualizar
             // 
-            btnLimpar.BackColor = Color.Gainsboro;
-            btnLimpar.FlatAppearance.BorderColor = Color.Black;
-            btnLimpar.FlatStyle = FlatStyle.Popup;
-            btnLimpar.Font = new Font("Segoe UI", 10F);
-            btnLimpar.Location = new Point(409, 218);
-            btnLimpar.Name = "btnLimpar";
-            btnLimpar.Size = new Size(98, 33);
-            btnLimpar.TabIndex = 15;
-            btnLimpar.Text = "Limpar";
-            btnLimpar.UseVisualStyleBackColor = false;
+            btnAtualizar.BackColor = Color.Khaki;
+            btnAtualizar.FlatAppearance.BorderColor = Color.Black;
+            btnAtualizar.FlatStyle = FlatStyle.Popup;
+            btnAtualizar.Font = new Font("Segoe UI", 10F);
+            btnAtualizar.Location = new Point(155, 216);
+            btnAtualizar.Name = "btnAtualizar";
+            btnAtualizar.Size = new Size(98, 35);
+            btnAtualizar.TabIndex = 13;
+            btnAtualizar.Text = "Atualizar";
+            btnAtualizar.UseVisualStyleBackColor = false;
+            btnAtualizar.Click += btnAtualizar_Click;
+            // 
+            // btnCadastrar
+            // 
+            btnCadastrar.BackColor = Color.DeepSkyBlue;
+            btnCadastrar.FlatAppearance.BorderColor = Color.Black;
+            btnCadastrar.FlatStyle = FlatStyle.Popup;
+            btnCadastrar.Font = new Font("Segoe UI", 10F);
+            btnCadastrar.Location = new Point(22, 216);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(98, 35);
+            btnCadastrar.TabIndex = 12;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
+            // 
+            // cboCategoria
+            // 
+            cboCategoria.FormattingEnabled = true;
+            cboCategoria.Items.AddRange(new object[] { "Alimentos", "Bebidas", "Limpeza", "Higiene" });
+            cboCategoria.Location = new Point(212, 89);
+            cboCategoria.Name = "cboCategoria";
+            cboCategoria.Size = new Size(135, 23);
+            cboCategoria.TabIndex = 11;
+            // 
+            // txtPreço
+            // 
+            txtPreço.Location = new Point(212, 167);
+            txtPreço.Name = "txtPreço";
+            txtPreço.Size = new Size(135, 23);
+            txtPreço.TabIndex = 10;
+            // 
+            // txtQtd
+            // 
+            txtQtd.Location = new Point(212, 125);
+            txtQtd.Name = "txtQtd";
+            txtQtd.Size = new Size(135, 23);
+            txtQtd.TabIndex = 9;
+            // 
+            // txtNomeProd
+            // 
+            txtNomeProd.Location = new Point(212, 54);
+            txtNomeProd.Name = "txtNomeProd";
+            txtNomeProd.Size = new Size(135, 23);
+            txtNomeProd.TabIndex = 8;
+            // 
+            // txtCodigo
+            // 
+            txtCodigo.Location = new Point(212, 17);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new Size(135, 23);
+            txtCodigo.TabIndex = 7;
+            // 
+            // lblPreço
+            // 
+            lblPreço.AutoSize = true;
+            lblPreço.Font = new Font("Segoe UI", 10F);
+            lblPreço.Location = new Point(10, 171);
+            lblPreço.Name = "lblPreço";
+            lblPreço.Size = new Size(71, 19);
+            lblPreço.TabIndex = 6;
+            lblPreço.Text = "Preço (R$)";
+            // 
+            // lblQtd
+            // 
+            lblQtd.AutoSize = true;
+            lblQtd.Font = new Font("Segoe UI", 10F);
+            lblQtd.Location = new Point(10, 129);
+            lblQtd.Name = "lblQtd";
+            lblQtd.Size = new Size(157, 19);
+            lblQtd.TabIndex = 5;
+            lblQtd.Text = "Quantidade em Estoque";
+            // 
+            // lblCategoria
+            // 
+            lblCategoria.AutoSize = true;
+            lblCategoria.Font = new Font("Segoe UI", 10F);
+            lblCategoria.Location = new Point(10, 93);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(68, 19);
+            lblCategoria.TabIndex = 4;
+            lblCategoria.Text = "Categoria";
             // 
             // panel1
             // 
@@ -264,30 +269,8 @@
             panel1.Controls.Add(txtBuscaProdutos);
             panel1.Location = new Point(3, 380);
             panel1.Name = "panel1";
-            panel1.Size = new Size(813, 279);
+            panel1.Size = new Size(810, 279);
             panel1.TabIndex = 6;
-            // 
-            // txtBuscaProdutos
-            // 
-            txtBuscaProdutos.Font = new Font("Segoe UI", 10F);
-            txtBuscaProdutos.Location = new Point(10, 24);
-            txtBuscaProdutos.Name = "txtBuscaProdutos";
-            txtBuscaProdutos.Size = new Size(256, 25);
-            txtBuscaProdutos.TabIndex = 0;
-            txtBuscaProdutos.Text = "Pesquisar produtos...";
-            // 
-            // btnBusca
-            // 
-            btnBusca.BackColor = Color.WhiteSmoke;
-            btnBusca.FlatAppearance.BorderColor = Color.Black;
-            btnBusca.FlatStyle = FlatStyle.Popup;
-            btnBusca.Font = new Font("Segoe UI", 10F);
-            btnBusca.Location = new Point(272, 24);
-            btnBusca.Name = "btnBusca";
-            btnBusca.Size = new Size(75, 25);
-            btnBusca.TabIndex = 1;
-            btnBusca.Text = "Buscar";
-            btnBusca.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -308,13 +291,14 @@
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { CódigoProduto, NomeProduto, Categoria, Estoque, Preço, Data });
-            dataGridView1.Location = new Point(10, 72);
+            dataGridView1.Location = new Point(5, 76);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(797, 150);
             dataGridView1.TabIndex = 2;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // CódigoProduto
             // 
@@ -351,6 +335,30 @@
             Data.HeaderText = "Data Cadastro";
             Data.Name = "Data";
             Data.ReadOnly = true;
+            // 
+            // btnBusca
+            // 
+            btnBusca.BackColor = Color.WhiteSmoke;
+            btnBusca.FlatAppearance.BorderColor = Color.Black;
+            btnBusca.FlatStyle = FlatStyle.Popup;
+            btnBusca.Font = new Font("Segoe UI", 10F);
+            btnBusca.Location = new Point(272, 24);
+            btnBusca.Name = "btnBusca";
+            btnBusca.Size = new Size(75, 25);
+            btnBusca.TabIndex = 1;
+            btnBusca.Text = "Buscar";
+            btnBusca.UseVisualStyleBackColor = false;
+            btnBusca.Click += btnBusca_Click;
+            // 
+            // txtBuscaProdutos
+            // 
+            txtBuscaProdutos.Font = new Font("Segoe UI", 10F);
+            txtBuscaProdutos.Location = new Point(10, 24);
+            txtBuscaProdutos.Name = "txtBuscaProdutos";
+            txtBuscaProdutos.Size = new Size(256, 25);
+            txtBuscaProdutos.TabIndex = 0;
+            txtBuscaProdutos.Text = "Pesquisar produtos...";
+            txtBuscaProdutos.Click += txtBuscaProdutos_Click;
             // 
             // UcProdutos
             // 
