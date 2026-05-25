@@ -35,7 +35,9 @@
             label2 = new Label();
             label1 = new Label();
             panelPrincipal = new Panel();
+            ucProdutos1 = new UcProdutos();
             panelLateral.SuspendLayout();
+            panelPrincipal.SuspendLayout();
             SuspendLayout();
             // 
             // panelLateral
@@ -48,7 +50,7 @@
             panelLateral.Controls.Add(label1);
             panelLateral.Location = new Point(1, 1);
             panelLateral.Name = "panelLateral";
-            panelLateral.Size = new Size(200, 521);
+            panelLateral.Size = new Size(200, 640);
             panelLateral.TabIndex = 0;
             // 
             // btn3Menu
@@ -112,18 +114,26 @@
             // 
             // panelPrincipal
             // 
+            panelPrincipal.Controls.Add(ucProdutos1);
             panelPrincipal.Dock = DockStyle.Fill;
             panelPrincipal.Location = new Point(0, 0);
             panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(938, 522);
+            panelPrincipal.Size = new Size(1012, 644);
             panelPrincipal.TabIndex = 1;
             panelPrincipal.Paint += panelPrincipal_Paint;
+            // 
+            // ucProdutos1
+            // 
+            ucProdutos1.Location = new Point(196, 1);
+            ucProdutos1.Name = "ucProdutos1";
+            ucProdutos1.Size = new Size(816, 643);
+            ucProdutos1.TabIndex = 0;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(938, 522);
+            ClientSize = new Size(1012, 644);
             Controls.Add(panelLateral);
             Controls.Add(panelPrincipal);
             Name = "Form1";
@@ -131,6 +141,7 @@
             WindowState = FormWindowState.Maximized;
             panelLateral.ResumeLayout(false);
             panelLateral.PerformLayout();
+            panelPrincipal.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -143,5 +154,6 @@
         private Button btn1Menu;
         private Label label2;
         private Button btn3Menu;
+        private UcProdutos ucProdutos1;
     }
 }

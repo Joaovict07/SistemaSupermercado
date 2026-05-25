@@ -1,5 +1,5 @@
 ﻿using SistemaSupermercado.Data;
-using SistemaSupermercado.Modelo;
+using SistemaSupermercado.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;

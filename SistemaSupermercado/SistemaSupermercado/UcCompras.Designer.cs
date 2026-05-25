@@ -549,6 +549,6 @@
         private Button btnLimpar;
         private TextBox txtCarrinho;
         private NumericUpDown numericUpDown1;
-        private Button btnCarrinho;
+        //private Button btnCarrinho;
     }
 }
