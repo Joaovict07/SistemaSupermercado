@@ -12,5 +12,8 @@ namespace SistemaSupermercado.Entity
         public int quantidade { get; set; }
         public decimal preco { get; set; }
         public DateTime data_cadastro { get; set; }
+
+        // Apenas para a coluna total do carrinho
+        public decimal total => quantidade * preco;
     }
 }

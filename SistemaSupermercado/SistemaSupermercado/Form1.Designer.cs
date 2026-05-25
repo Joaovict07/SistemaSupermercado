@@ -35,6 +35,7 @@
             label2 = new Label();
             label1 = new Label();
             panelPrincipal = new Panel();
+            ucCompras1 = new UcCompras();
             ucProdutos1 = new UcProdutos();
             panelLateral.SuspendLayout();
             panelPrincipal.SuspendLayout();
@@ -65,6 +66,7 @@
             btn3Menu.TabIndex = 4;
             btn3Menu.Text = "Sair";
             btn3Menu.UseVisualStyleBackColor = false;
+            btn3Menu.Click += btn3Menu_Click;
             // 
             // btn2Menu
             // 
@@ -78,6 +80,7 @@
             btn2Menu.TabIndex = 3;
             btn2Menu.Text = "Compras";
             btn2Menu.UseVisualStyleBackColor = false;
+            btn2Menu.Click += btn2Menu_Click;
             // 
             // btn1Menu
             // 
@@ -91,6 +94,7 @@
             btn1Menu.TabIndex = 2;
             btn1Menu.Text = "Produtos";
             btn1Menu.UseVisualStyleBackColor = false;
+            btn1Menu.Click += btn1Menu_Click;
             // 
             // label2
             // 
@@ -114,6 +118,7 @@
             // 
             // panelPrincipal
             // 
+            panelPrincipal.Controls.Add(ucCompras1);
             panelPrincipal.Controls.Add(ucProdutos1);
             panelPrincipal.Dock = DockStyle.Fill;
             panelPrincipal.Location = new Point(0, 0);
@@ -122,9 +127,17 @@
             panelPrincipal.TabIndex = 1;
             panelPrincipal.Paint += panelPrincipal_Paint;
             // 
+            // ucCompras1
+            // 
+            ucCompras1.Location = new Point(196, -2);
+            ucCompras1.Name = "ucCompras1";
+            ucCompras1.Size = new Size(816, 662);
+            ucCompras1.TabIndex = 1;
+            ucCompras1.Visible = false;
+            // 
             // ucProdutos1
             // 
-            ucProdutos1.Location = new Point(196, 1);
+            ucProdutos1.Location = new Point(196, -2);
             ucProdutos1.Name = "ucProdutos1";
             ucProdutos1.Size = new Size(816, 643);
             ucProdutos1.TabIndex = 0;
@@ -134,11 +147,12 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1012, 644);
+            ControlBox = false;
             Controls.Add(panelLateral);
             Controls.Add(panelPrincipal);
             Name = "Form1";
-            Text = "Form1";
-            WindowState = FormWindowState.Maximized;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Sistema Supermercado";
             panelLateral.ResumeLayout(false);
             panelLateral.PerformLayout();
             panelPrincipal.ResumeLayout(false);
@@ -155,5 +169,6 @@
         private Label label2;
         private Button btn3Menu;
         private UcProdutos ucProdutos1;
+        private UcCompras ucCompras1;
     }
 }

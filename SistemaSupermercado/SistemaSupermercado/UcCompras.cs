@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using SistemaSupermercado.Data;
+using SistemaSupermercado.Entity;
+using SistemaSupermercado.Repository;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace SistemaSupermercado
 {
@@ -13,7 +10,156 @@ namespace SistemaSupermercado
         public UcCompras()
         {
             InitializeComponent();
+            _repositorio = new ProdutoRepository(new BancoContext());
+            CarregarDadosNoGrid();
+        }
+        private int quantidadeProduto;
+        private decimal precoProduto;
+        private string codigoProduto;
+        private readonly ProdutoRepository _repositorio;
+        private List<Produto> _listaProdutos = new List<Produto>();
+        private List<Produto> _listaProdutosComprados = new List<Produto>();
+
+        private void CarregarDadosNoGrid()
+        {
+            dataGridView2.AutoGenerateColumns = false;
+            Codigo.DataPropertyName = "codigo";
+            Produto.DataPropertyName = "nome";
+            EstoqueCompras.DataPropertyName = "quantidade";
+            Preco.DataPropertyName = "preco";
+
+            _listaProdutos = _repositorio.Listar();
+            dataGridView2.DataSource = _listaProdutos;
+
         }
 
+        private void txtBuscaProdutosCompras_TextChanged(object sender, EventArgs e)
+        {
+            var procurado = txtBuscaProdutosCompras.Text.Trim();
+
+            if (string.IsNullOrEmpty(procurado))
+            {
+                dataGridView2.DataSource = _listaProdutos;
+                return;
+            }
+
+            var listaFiltrada = new List<Produto>();
+            if (cboCategoriaCompras.Text != "Todas Categorias")
+            {
+                listaFiltrada = _listaProdutos
+                    .Where(p => p.categoria.Contains(cboCategoriaCompras.Text) &&
+                                p.nome.Contains(procurado, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+            }
+            else
+            {
+                listaFiltrada = _listaProdutos
+                    .Where(p => p.nome.Contains(procurado, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+            }
+
+            dataGridView2.DataSource = listaFiltrada;
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+                txtCarrinho.Text = row.Cells["Produto"].Value.ToString();
+                quantidadeProduto = Convert.ToInt32(row.Cells["EstoqueCompras"].Value);
+                precoProduto = Convert.ToDecimal(row.Cells["Preco"].Value);
+                codigoProduto = row.Cells["Codigo"].Value.ToString();
+            }
+            numericUpDown1.Value = 0;
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            if (numericUpDown1.Value > quantidadeProduto)
+            {
+                MessageBox.Show("Quantidade solicitada excede o estoque disponível.");
+                numericUpDown1.Value = quantidadeProduto;
+                return;
+            }
+        }
+
+        private void cboCategoriaCompras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var procurado = txtBuscaProdutosCompras.Text.Trim();
+            List<Produto> listaFiltrada;
+
+            if (cboCategoriaCompras.Text == "Todas Categorias")
+            {
+                if (string.IsNullOrEmpty(procurado))
+                {
+                    listaFiltrada = _listaProdutos.ToList();
+                }
+                else
+                {
+                    listaFiltrada = _listaProdutos
+                        .Where(p => p.nome.Contains(procurado, StringComparison.OrdinalIgnoreCase))
+                        .ToList();
+                }
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(procurado))
+                {
+                    listaFiltrada = _listaProdutos
+                        .Where(p => p.categoria.Contains(cboCategoriaCompras.Text, StringComparison.OrdinalIgnoreCase))
+                        .ToList();
+                }
+                else
+                {
+                    listaFiltrada = _listaProdutos
+                        .Where(p => p.categoria.Contains(cboCategoriaCompras.Text, StringComparison.OrdinalIgnoreCase) &&
+                                    p.nome.Contains(procurado, StringComparison.OrdinalIgnoreCase))
+                        .ToList();
+                }
+            }
+
+            dataGridView2.DataSource = listaFiltrada;
+        }
+
+        private void txtBuscaProdutosCompras_Click(object sender, EventArgs e)
+        {
+            txtBuscaProdutosCompras.Clear();
+        }
+
+        private void btnCarrinho_Click(object sender, EventArgs e)
+        {
+            _listaProdutosComprados.Add(new Produto
+            {
+                codigo = codigoProduto,
+                nome = txtCarrinho.Text,
+                quantidade = (int)numericUpDown1.Value,
+                preco = precoProduto
+            });
+            dataGridView3.AutoGenerateColumns = false;
+            CarrinhoProduto.DataPropertyName = "nome";
+            CarrinhoQuantidade.DataPropertyName = "quantidade";
+            CarrinhoValor.DataPropertyName = "preco";
+            CarrinhoTotal.DataPropertyName = "total";
+
+            dataGridView3.DataSource = _listaProdutosComprados.ToList();
+
+            txtSubTotal.Text = _listaProdutosComprados.Sum(p => p.total).ToString("C");
+            txtTotal.Text = (_listaProdutosComprados.Sum(p => p.total) - Convert.ToDecimal(txtDesconto.Text)).ToString("C");
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            _listaProdutosComprados.Clear();
+            dataGridView3.DataSource = null;
+            txtSubTotal.Text = "0,00";
+            txtDesconto.Text = "0,00";
+            txtTotal.Text = "0,00";
+        }
+
+        private void txtDesconto_TextChanged(object sender, EventArgs e)
+        {
+            txtTotal.Text = (_listaProdutosComprados.Sum(p => p.total) - Convert.ToDecimal(txtDesconto.Text)).ToString("C");
+        }
     }
 }

@@ -7,6 +7,7 @@ namespace SistemaSupermercado.Data
     internal class BancoContext : DbContext
     {
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Compras> Compras { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
