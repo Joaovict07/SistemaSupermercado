@@ -75,5 +75,21 @@ namespace SistemaSupermercado.Repository
             }
         }
 
+        public void AtualizarEstoque(string codigo, int Quantidade)
+        {
+            var produtoExistente = _bancoDeDados.Produtos.FirstOrDefault(p => p.codigo == codigo);
+            var quantidadeAtual = _bancoDeDados.Produtos.FirstOrDefault(p => p.codigo == codigo).quantidade;
+
+            if (produtoExistente != null)
+            {
+                produtoExistente.quantidade = quantidadeAtual - Quantidade;
+                _bancoDeDados.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show("Produto não encontrado para atualizar estoque!");
+            }
+        }
+
     }
 }

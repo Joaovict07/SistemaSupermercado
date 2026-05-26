@@ -11,12 +11,16 @@ namespace SistemaSupermercado
         {
             InitializeComponent();
             _repositorio = new ProdutoRepository(new BancoContext());
+            _repositorioCompra = new CompraRepository(new BancoContext());
+            _repositorioProdutoCompra = new ProdutoComprasRepository(new BancoContext());
             CarregarDadosNoGrid();
         }
         private int quantidadeProduto;
         private decimal precoProduto;
         private string codigoProduto;
         private readonly ProdutoRepository _repositorio;
+        private readonly CompraRepository _repositorioCompra;
+        private readonly ProdutoComprasRepository _repositorioProdutoCompra;
         private List<Produto> _listaProdutos = new List<Produto>();
         private List<Produto> _listaProdutosComprados = new List<Produto>();
 
@@ -29,6 +33,7 @@ namespace SistemaSupermercado
             Preco.DataPropertyName = "preco";
 
             _listaProdutos = _repositorio.Listar();
+            _listaProdutos = _listaProdutos.Where(p => p.quantidade > 0).ToList();
             dataGridView2.DataSource = _listaProdutos;
 
         }
@@ -128,7 +133,12 @@ namespace SistemaSupermercado
         }
 
         private void btnCarrinho_Click(object sender, EventArgs e)
-        {
+        {   
+            if (numericUpDown1.Value == 0)
+            {
+                MessageBox.Show("Quantidade inválida.");
+                return;
+            }
             _listaProdutosComprados.Add(new Produto
             {
                 codigo = codigoProduto,
@@ -160,6 +170,43 @@ namespace SistemaSupermercado
         private void txtDesconto_TextChanged(object sender, EventArgs e)
         {
             txtTotal.Text = (_listaProdutosComprados.Sum(p => p.total) - Convert.ToDecimal(txtDesconto.Text)).ToString("C");
+        }
+
+        private void btnFinalizarCompra_Click(object sender, EventArgs e)
+        {
+            string codigoCompra = DateTime.Now.ToString("YY") + new Random().Next(1000, 9999).ToString();
+            var compra = new Compras
+            {
+                codigo_compra = codigoCompra,
+                subtotal = _listaProdutosComprados.Sum(p => p.total),
+                desconto = Convert.ToDecimal(txtDesconto.Text),
+                total = (_listaProdutosComprados.Sum(p => p.total) - Convert.ToDecimal(txtDesconto.Text)),
+                data_compra = DateTime.Now
+            };
+
+            foreach (var produto in _listaProdutosComprados)
+            {
+                var compraProduto = new Produtos_Compras
+                {
+                    codigo_compra = codigoCompra,
+                    codigo_produto = produto.codigo,
+                    quantidade = produto.quantidade,
+                    preco = produto.preco
+                };
+                _repositorioProdutoCompra.Salvar(compraProduto);
+                _repositorio.AtualizarEstoque(produto.codigo, produto.quantidade);
+                CarregarDadosNoGrid();
+            }
+
+            _repositorioCompra.Salvar(compra);
+            _listaProdutosComprados.Clear();
+            dataGridView3.DataSource = null;
+            txtSubTotal.Text = "0,00";
+            txtDesconto.Text = "0,00";
+            txtTotal.Text = "0,00";
+            txtCarrinho.Text = "";
+            numericUpDown1.Value = 0;
+            MessageBox.Show("Compra cadastrada com sucesso!");
         }
     }
 }
