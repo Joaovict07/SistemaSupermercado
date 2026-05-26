@@ -1,25 +1,11 @@
 {
   "Version": 1,
-<<<<<<< Updated upstream
-  "WorkspaceRootPath": "C:\\Users\\joaov\\OneDrive\\Documentos\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{88B0831C-2395-F1D4-98BA-1E48E7D9A0CB}|SistemaSupermercado.csproj|c:\\users\\joaov\\onedrive\\documentos\\github\\sistemasupermercado\\sistemasupermercado\\sistemasupermercado\\ucprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88B0831C-2395-F1D4-98BA-1E48E7D9A0CB}|SistemaSupermercado.csproj|solutionrelative:ucprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88B0831C-2395-F1D4-98BA-1E48E7D9A0CB}|SistemaSupermercado.csproj|c:\\users\\joaov\\onedrive\\documentos\\github\\sistemasupermercado\\sistemasupermercado\\sistemasupermercado\\ucprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{88B0831C-2395-F1D4-98BA-1E48E7D9A0CB}|SistemaSupermercado.csproj|solutionrelative:ucprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88B0831C-2395-F1D4-98BA-1E48E7D9A0CB}|SistemaSupermercado.csproj|c:\\users\\joaov\\onedrive\\documentos\\github\\sistemasupermercado\\sistemasupermercado\\sistemasupermercado\\ucprodutos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88B0831C-2395-F1D4-98BA-1E48E7D9A0CB}|SistemaSupermercado.csproj|solutionrelative:ucprodutos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88B0831C-2395-F1D4-98BA-1E48E7D9A0CB}|SistemaSupermercado.csproj|c:\\users\\joaov\\onedrive\\documentos\\github\\sistemasupermercado\\sistemasupermercado\\sistemasupermercado\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-=======
   "WorkspaceRootPath": "C:\\Users\\Beatriz\\Documents\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\",
   "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{88B0831C-2395-F1D4-98BA-1E48E7D9A0CB}|SistemaSupermercado.csproj|c:\\users\\beatriz\\documents\\github\\sistemasupermercado\\sistemasupermercado\\sistemasupermercado\\uccomprarealizada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{88B0831C-2395-F1D4-98BA-1E48E7D9A0CB}|SistemaSupermercado.csproj|solutionrelative:uccomprarealizada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
     {
       "AbsoluteMoniker": "D:0:0:{88B0831C-2395-F1D4-98BA-1E48E7D9A0CB}|SistemaSupermercado.csproj|c:\\users\\beatriz\\documents\\github\\sistemasupermercado\\sistemasupermercado\\sistemasupermercado\\uccompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{88B0831C-2395-F1D4-98BA-1E48E7D9A0CB}|SistemaSupermercado.csproj|solutionrelative:uccompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
@@ -30,7 +16,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{88B0831C-2395-F1D4-98BA-1E48E7D9A0CB}|SistemaSupermercado.csproj|c:\\users\\beatriz\\documents\\github\\sistemasupermercado\\sistemasupermercado\\sistemasupermercado\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
->>>>>>> Stashed changes
       "RelativeMoniker": "D:0:0:{88B0831C-2395-F1D4-98BA-1E48E7D9A0CB}|SistemaSupermercado.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -41,37 +26,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< Updated upstream
-          "SelectedChildIndex": 3,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form1.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\joaov\\OneDrive\\Documentos\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\joaov\\OneDrive\\Documentos\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\Form1.cs [Projeto]",
-              "RelativeToolTip": "Form1.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T22:13:01.977Z",
-=======
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UcCompraRealizada.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\Beatriz\\Documents\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\UcCompraRealizada.cs",
+              "RelativeDocumentMoniker": "UcCompraRealizada.cs",
+              "ToolTip": "C:\\Users\\Beatriz\\Documents\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\UcCompraRealizada.cs [Projeto]",
+              "RelativeToolTip": "UcCompraRealizada.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T01:18:42.148Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "UcCompras.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\Beatriz\\Documents\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\UcCompras.cs",
               "RelativeDocumentMoniker": "UcCompras.cs",
               "ToolTip": "C:\\Users\\Beatriz\\Documents\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\UcCompras.cs [Projeto]",
               "RelativeToolTip": "UcCompras.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T21:47:42.668Z",
+              "WhenOpened": "2026-05-25T01:11:52.35Z",
               "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\Beatriz\\Documents\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -79,55 +62,19 @@
               "RelativeToolTip": "Form1.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-24T21:11:59.56Z",
->>>>>>> Stashed changes
               "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UcProdutos.cs [Projeto]",
-<<<<<<< Updated upstream
-              "DocumentMoniker": "C:\\Users\\joaov\\OneDrive\\Documentos\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\UcProdutos.cs",
-              "RelativeDocumentMoniker": "UcProdutos.cs",
-              "ToolTip": "C:\\Users\\joaov\\OneDrive\\Documentos\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\UcProdutos.cs [Projeto]*",
-              "RelativeToolTip": "UcProdutos.cs [Projeto]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T22:02:42.263Z",
-=======
               "DocumentMoniker": "C:\\Users\\Beatriz\\Documents\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\UcProdutos.cs",
               "RelativeDocumentMoniker": "UcProdutos.cs",
               "ToolTip": "C:\\Users\\Beatriz\\Documents\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\UcProdutos.cs [Projeto]",
               "RelativeToolTip": "UcProdutos.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-24T19:23:50.922Z",
->>>>>>> Stashed changes
               "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UcProdutos.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\joaov\\OneDrive\\Documentos\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\UcProdutos.Designer.cs",
-              "RelativeDocumentMoniker": "UcProdutos.Designer.cs",
-              "ToolTip": "C:\\Users\\joaov\\OneDrive\\Documentos\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\UcProdutos.Designer.cs*",
-              "RelativeToolTip": "UcProdutos.Designer.cs*",
-              "ViewState": "AgIAAEkBAAAAAAAAAAAAAGcBAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T22:01:01.208Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UcProdutos.cs",
-              "DocumentMoniker": "C:\\Users\\joaov\\OneDrive\\Documentos\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\UcProdutos.cs",
-              "RelativeDocumentMoniker": "UcProdutos.cs",
-              "ToolTip": "C:\\Users\\joaov\\OneDrive\\Documentos\\GitHub\\SistemaSupermercado\\SistemaSupermercado\\SistemaSupermercado\\UcProdutos.cs*",
-              "RelativeToolTip": "UcProdutos.cs*",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAqwKoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T22:01:18.296Z",
-              "EditorCaption": ""
             }
           ]
         }
