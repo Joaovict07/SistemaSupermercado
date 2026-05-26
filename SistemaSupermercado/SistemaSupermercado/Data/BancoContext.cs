@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SistemaSupermercado.Modelo;
+using SistemaSupermercado.Entity;
 using Pomelo.EntityFrameworkCore.MySql;
 
 namespace SistemaSupermercado.Data

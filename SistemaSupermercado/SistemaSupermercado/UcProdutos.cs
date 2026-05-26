@@ -1,13 +1,18 @@
 ﻿using SistemaSupermercado.Data;
-using SistemaSupermercado.Modelo;
+using SistemaSupermercado.Entity;
+using SistemaSupermercado.Repository;
+using System.Data;
 
 namespace SistemaSupermercado
 {
     public partial class UcProdutos : UserControl
     {
+        private readonly ProdutoRepository _repositorio;
+        private List<Produto> _listaProdutos = new List<Produto>();
         public UcProdutos()
         {
             InitializeComponent();
+            _repositorio = new ProdutoRepository(new BancoContext());
             CarregarDadosNoGrid();
         }
         private void LimparCampos()
@@ -29,11 +34,10 @@ namespace SistemaSupermercado
             Estoque.DataPropertyName = "quantidade";
             Preço.DataPropertyName = "preco";
             Data.DataPropertyName = "data_cadastro";
-            using (var contexto = new BancoContext())
-            {
-                var listaDeProdutos = contexto.Produtos.ToList();
-                dataGridView1.DataSource = listaDeProdutos;
-            }
+            
+            _listaProdutos = _repositorio.Listar();
+            dataGridView1.DataSource = _listaProdutos;
+            
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -51,23 +55,21 @@ namespace SistemaSupermercado
                 return;
             }
 
-            using (var contexto = new BancoContext())
+           
+            var produto = new Produto
             {
-                var produto = new Produto
-                {
-                    codigo = codigoProduto,
-                    nome = nomeProduto,
-                    categoria = categoria,
-                    quantidade = quatidade,
-                    preco = preco,
-                    data_cadastro = DateTime.Parse(dataCadastro)
-                };
-                contexto.Produtos.Add(produto);
-                contexto.SaveChanges();
-                MessageBox.Show("Produto cadastrado com sucesso!");
-                LimparCampos();
-                CarregarDadosNoGrid();
-            }
+                codigo = codigoProduto,
+                nome = nomeProduto,
+                categoria = categoria,
+                quantidade = quatidade,
+                preco = preco,
+                data_cadastro = DateTime.Parse(dataCadastro)
+            };
+
+            _repositorio.Salvar(produto);
+            LimparCampos();
+            CarregarDadosNoGrid();
+           
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -103,26 +105,20 @@ namespace SistemaSupermercado
                 return;
             }
 
-            using (var contexto = new BancoContext())
+            var produto = new Produto
             {
-                var produto = contexto.Produtos.FirstOrDefault(p => p.codigo == codigoProduto);
-                if (produto != null)
-                {
-                    produto.nome = nomeProduto;
-                    produto.categoria = categoria;
-                    produto.quantidade = quatidade;
-                    produto.preco = preco;
-                    produto.data_cadastro = DateTime.Parse(dataCadastro);
-                    contexto.SaveChanges();
-                    MessageBox.Show("Produto atualizado com sucesso!");
-                    LimparCampos();
-                    CarregarDadosNoGrid();
-                }
-                else
-                {
-                    MessageBox.Show("Produto não encontrado para atualização.");
-                }
-            }
+                codigo = codigoProduto,
+                nome = nomeProduto,
+                categoria = categoria,
+                quantidade = quatidade,
+                preco = preco,
+                data_cadastro = DateTime.Parse(dataCadastro)
+            };
+
+            _repositorio.Editar(produto);
+     
+            LimparCampos();
+            CarregarDadosNoGrid();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -132,34 +128,36 @@ namespace SistemaSupermercado
                 MessageBox.Show("Por favor, selecione um produto para excluir.");
                 return;
             }
-            using (var contexto = new BancoContext())
+
+            string codigo = txtCodigo.Text.Trim();
+
+            if(codigo.Length != 0)
             {
-                var produto = contexto.Produtos.FirstOrDefault(p => p.codigo == txtCodigo.Text.Trim());
-                if (produto != null)
-                {
-                    contexto.Produtos.Remove(produto);
-                    contexto.SaveChanges();
-                    MessageBox.Show("Produto excluído com sucesso!");
-                    LimparCampos();
-                    CarregarDadosNoGrid();
-                }
-                else
-                {
-                    MessageBox.Show("Produto não encontrado para exclusão.");
-                }
+                _repositorio.Excluir(codigo);
+                LimparCampos();
+                CarregarDadosNoGrid();
+                return;
             }
+
         }
 
         private void btnBusca_Click(object sender, EventArgs e)
         {
             var procurado = txtBuscaProdutos.Text.Trim();
-            using (var contexto = new BancoContext())
+         
+            if (string.IsNullOrEmpty(procurado))
             {
-                var resultados = contexto.Produtos
-                    .Where(p => p.nome.Contains(procurado) || p.categoria.Contains(procurado))
-                    .ToList();
-                dataGridView1.DataSource = resultados;
+                dataGridView1.DataSource = _listaProdutos;
+                return; 
             }
+
+            var listaFiltrada = _listaProdutos
+                .Where(p => p.categoria.Contains(procurado) ||
+                            p.nome.Contains(procurado, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            dataGridView1.DataSource = listaFiltrada;
+
         }
 
         private void txtBuscaProdutos_Click(object sender, EventArgs e)
