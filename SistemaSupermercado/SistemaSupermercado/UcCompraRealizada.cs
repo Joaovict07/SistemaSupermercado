@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
+﻿using SistemaSupermercado.Entity;
+
 
 namespace SistemaSupermercado
 {
@@ -13,6 +8,10 @@ namespace SistemaSupermercado
         public UcCompraRealizada()
         {
             InitializeComponent();
+        }
+        public void CompraRealizada(List<Produto> listaDeCompras, Compras compras)
+        {
+
         }
     }
 }

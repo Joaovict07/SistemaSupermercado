@@ -15,6 +15,7 @@ namespace SistemaSupermercado
             _repositorioProdutoCompra = new ProdutoComprasRepository(new BancoContext());
             CarregarDadosNoGrid();
         }
+        public event Action<List<Produto>, Compras> AoEnviarLista;
         private int quantidadeProduto;
         private decimal precoProduto;
         private string codigoProduto;
@@ -173,7 +174,13 @@ namespace SistemaSupermercado
         }
 
         private void btnFinalizarCompra_Click(object sender, EventArgs e)
-        {
+        {   
+            if (_listaProdutosComprados.Count == 0)
+            {
+                MessageBox.Show("Nenhum produto adicionado ao carrinho.");
+                return;
+            }
+
             string codigoCompra = DateTime.Now.ToString("YY") + new Random().Next(1000, 9999).ToString();
             var compra = new Compras
             {
@@ -197,7 +204,7 @@ namespace SistemaSupermercado
                 _repositorio.AtualizarEstoque(produto.codigo, produto.quantidade);
                 CarregarDadosNoGrid();
             }
-
+            AoEnviarLista?.Invoke(_listaProdutosComprados, compra);
             _repositorioCompra.Salvar(compra);
             _listaProdutosComprados.Clear();
             dataGridView3.DataSource = null;
@@ -206,7 +213,7 @@ namespace SistemaSupermercado
             txtTotal.Text = "0,00";
             txtCarrinho.Text = "";
             numericUpDown1.Value = 0;
-            MessageBox.Show("Compra cadastrada com sucesso!");
+            
         }
     }
 }

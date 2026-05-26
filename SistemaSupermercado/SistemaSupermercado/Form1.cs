@@ -1,3 +1,5 @@
+using SistemaSupermercado.Entity;
+
 namespace SistemaSupermercado
 {
     public partial class Form1 : Form
@@ -5,6 +7,20 @@ namespace SistemaSupermercado
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            ucCompras1.AoEnviarLista += ReceberDados_E_TrocarTela;
+            
+        }
+        private void ReceberDados_E_TrocarTela(List<Produto> listaRecebida, Compras compra)
+        {
+            ucCompraRealizada1.CompraRealizada(listaRecebida, compra);
+            ucCompras1.Visible = false;
+            ucProdutos1.Visible = false;
+            ucCompraRealizada1.Visible = true;
+            ucCompraRealizada1.BringToFront();
         }
 
         private void panelPrincipal_Paint(object sender, PaintEventArgs e)
@@ -19,6 +35,7 @@ namespace SistemaSupermercado
             {
                 ucProdutos1.Visible = true;
                 ucCompras1.Visible = false;
+                ucCompraRealizada1.Visible = false;
             }
 
         }
@@ -29,6 +46,7 @@ namespace SistemaSupermercado
             {
                 ucProdutos1.Visible = false;
                 ucCompras1.Visible = true;
+                ucCompraRealizada1.Visible = false;
             }
 
         }
@@ -37,5 +55,7 @@ namespace SistemaSupermercado
         {
             Application.Exit();
         }
+
+   
     }
 }

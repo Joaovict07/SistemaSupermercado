@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panelLateral = new Panel();
+            ucCompraRealizada1 = new UcCompraRealizada();
             btn3Menu = new Button();
             btn2Menu = new Button();
             btn1Menu = new Button();
@@ -53,6 +54,14 @@
             panelLateral.Name = "panelLateral";
             panelLateral.Size = new Size(200, 640);
             panelLateral.TabIndex = 0;
+            // 
+            // ucCompraRealizada1
+            // 
+            ucCompraRealizada1.Location = new Point(196, -2);
+            ucCompraRealizada1.Name = "ucCompraRealizada1";
+            ucCompraRealizada1.Size = new Size(816, 662);
+            ucCompraRealizada1.TabIndex = 5;
+            ucCompraRealizada1.Visible = false;
             // 
             // btn3Menu
             // 
@@ -118,6 +127,7 @@
             // 
             // panelPrincipal
             // 
+            panelPrincipal.Controls.Add(ucCompraRealizada1);
             panelPrincipal.Controls.Add(ucCompras1);
             panelPrincipal.Controls.Add(ucProdutos1);
             panelPrincipal.Dock = DockStyle.Fill;
@@ -153,6 +163,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema Supermercado";
+            Load += Form1_Load_1;
             panelLateral.ResumeLayout(false);
             panelLateral.PerformLayout();
             panelPrincipal.ResumeLayout(false);
@@ -170,5 +181,6 @@
         private Button btn3Menu;
         private UcProdutos ucProdutos1;
         private UcCompras ucCompras1;
+        private UcCompraRealizada ucCompraRealizada1;
     }
 }

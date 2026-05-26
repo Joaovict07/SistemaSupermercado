@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SistemaSupermercado.Entity
 {
-    internal class Compras
+    public class Compras
     {
         [Key]
         public string codigo_compra { get; set; }
