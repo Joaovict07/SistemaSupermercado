@@ -407,6 +407,7 @@
             btnNovaCompra.TabIndex = 21;
             btnNovaCompra.Text = "Nova Compra";
             btnNovaCompra.UseVisualStyleBackColor = false;
+            btnNovaCompra.Click += btnNovaCompra_Click;
             // 
             // btnFechar
             // 
