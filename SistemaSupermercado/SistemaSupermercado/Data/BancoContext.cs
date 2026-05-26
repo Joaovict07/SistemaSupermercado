@@ -8,6 +8,7 @@ namespace SistemaSupermercado.Data
     {
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Compras> Compras { get; set; }
+        public DbSet<Produtos_Compras> Produtos_Compras { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

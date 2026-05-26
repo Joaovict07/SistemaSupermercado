@@ -8,5 +8,6 @@ namespace SistemaSupermercado.Repository
         List<Produto> Listar();
         void Editar(Produto produto);
         void Excluir(string Codigo);
+        void AtualizarEstoque(string codigo, int novaQuantidade);
     }
 }
