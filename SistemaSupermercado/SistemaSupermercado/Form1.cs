@@ -12,15 +12,24 @@ namespace SistemaSupermercado
         private void Form1_Load_1(object sender, EventArgs e)
         {
             ucCompras1.AoEnviarLista += ReceberDados_E_TrocarTela;
-            
+            ucCompraRealizada1.AoNovaCompra += VoltarAoMenuDefault;
         }
+
         private void ReceberDados_E_TrocarTela(List<Produto> listaRecebida, Compras compra)
-        {  
+        {
+            ucCompraRealizada1.CompraRealizada(listaRecebida, compra);
             ucCompras1.Visible = false;
             ucProdutos1.Visible = false;
             ucCompraRealizada1.Visible = true;
             ucCompraRealizada1.BringToFront();
-            ucCompraRealizada1.CompraRealizada(listaRecebida, compra);
+        }
+
+        private void VoltarAoMenuDefault()
+        {
+            ucCompraRealizada1.Visible = false;
+            ucProdutos1.Visible = false;
+            ucCompras1.Visible = true;
+            ucCompras1.BringToFront();
         }
 
         private void panelPrincipal_Paint(object sender, PaintEventArgs e)
@@ -56,6 +65,7 @@ namespace SistemaSupermercado
             Application.Exit();
         }
 
-   
+
     }
 }
+
