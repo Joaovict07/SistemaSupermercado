@@ -70,6 +70,7 @@
             lblComprasQtd = new Label();
             lblComprasProduto = new Label();
             lblTitulo4 = new Label();
+            ucCompraRealizada1 = new UcCompraRealizada();
             panel1Compras.SuspendLayout();
             panel2Compras.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -84,6 +85,7 @@
             // 
             panel1Compras.BackColor = Color.White;
             panel1Compras.BorderStyle = BorderStyle.FixedSingle;
+            panel1Compras.Controls.Add(ucCompraRealizada1);
             panel1Compras.Controls.Add(lblSubtitulo1);
             panel1Compras.Controls.Add(lblTitulo2);
             panel1Compras.Location = new Point(3, 23);
@@ -499,6 +501,13 @@
             lblTitulo4.TabIndex = 15;
             lblTitulo4.Text = "Adicionar ao Carrinho";
             // 
+            // ucCompraRealizada1
+            // 
+            ucCompraRealizada1.Location = new Point(530, 54);
+            ucCompraRealizada1.Name = "ucCompraRealizada1";
+            ucCompraRealizada1.Size = new Size(816, 662);
+            ucCompraRealizada1.TabIndex = 2;
+            // 
             // UcCompras
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -565,6 +574,7 @@
         private DataGridViewTextBoxColumn CarrinhoQuantidade;
         private DataGridViewTextBoxColumn CarrinhoValor;
         private DataGridViewTextBoxColumn CarrinhoTotal;
+        private UcCompraRealizada ucCompraRealizada1;
         //private Button btnCarrinho;
     }
 }

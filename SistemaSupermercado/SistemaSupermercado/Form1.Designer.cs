@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             panelLateral = new Panel();
-            ucCompraRealizada1 = new UcCompraRealizada();
             btn3Menu = new Button();
             btn2Menu = new Button();
             btn1Menu = new Button();
             label2 = new Label();
             label1 = new Label();
+            ucCompraRealizada1 = new UcCompraRealizada();
             panelPrincipal = new Panel();
             ucCompras1 = new UcCompras();
             ucProdutos1 = new UcProdutos();
@@ -52,16 +52,8 @@
             panelLateral.Controls.Add(label1);
             panelLateral.Location = new Point(1, 1);
             panelLateral.Name = "panelLateral";
-            panelLateral.Size = new Size(200, 640);
+            panelLateral.Size = new Size(200, 661);
             panelLateral.TabIndex = 0;
-            // 
-            // ucCompraRealizada1
-            // 
-            ucCompraRealizada1.Location = new Point(196, -2);
-            ucCompraRealizada1.Name = "ucCompraRealizada1";
-            ucCompraRealizada1.Size = new Size(816, 662);
-            ucCompraRealizada1.TabIndex = 5;
-            ucCompraRealizada1.Visible = false;
             // 
             // btn3Menu
             // 
@@ -125,15 +117,24 @@
             label1.TabIndex = 0;
             label1.Text = "Supermercado";
             // 
+            // ucCompraRealizada1
+            // 
+            ucCompraRealizada1.Location = new Point(196, -2);
+            ucCompraRealizada1.Name = "ucCompraRealizada1";
+            ucCompraRealizada1.Size = new Size(816, 662);
+            ucCompraRealizada1.TabIndex = 5;
+            ucCompraRealizada1.Visible = false;
+            // 
             // panelPrincipal
             // 
+            panelPrincipal.AutoScroll = true;
             panelPrincipal.Controls.Add(ucCompraRealizada1);
             panelPrincipal.Controls.Add(ucCompras1);
             panelPrincipal.Controls.Add(ucProdutos1);
             panelPrincipal.Dock = DockStyle.Fill;
             panelPrincipal.Location = new Point(0, 0);
             panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(1012, 644);
+            panelPrincipal.Size = new Size(1012, 662);
             panelPrincipal.TabIndex = 1;
             panelPrincipal.Paint += panelPrincipal_Paint;
             // 
@@ -156,7 +157,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1012, 644);
+            ClientSize = new Size(1012, 662);
             ControlBox = false;
             Controls.Add(panelLateral);
             Controls.Add(panelPrincipal);
