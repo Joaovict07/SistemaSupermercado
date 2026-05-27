@@ -24,7 +24,7 @@ namespace SistemaSupermercado
             txtPreço.Clear();
         }
 
-        private void CarregarDadosNoGrid()
+        public void CarregarDadosNoGrid()
         {
             dataGridView1.AutoGenerateColumns = false;
 
@@ -45,8 +45,8 @@ namespace SistemaSupermercado
             string codigoProduto = txtCodigo.Text.Trim();
             string nomeProduto = txtNomeProd.Text.Trim();
             string categoria = cboCategoria.Text.Trim();
-            int quatidade = int.Parse(txtQtd.Text.Trim());
-            decimal preco = decimal.Parse(txtPreço.Text.Trim());
+            int quatidade = int.TryParse(txtQtd.Text.Trim(), out int qtd) ? qtd : 0;
+            decimal preco = decimal.TryParse(txtPreço.Text.Trim(), out decimal p) ? p : 0;
             string dataCadastro = DateTime.Now.ToString("yyyy-MM-dd");
 
             if (string.IsNullOrEmpty(codigoProduto) || string.IsNullOrEmpty(nomeProduto) || string.IsNullOrEmpty(categoria) || string.IsNullOrEmpty(txtQtd.Text.Trim()) || string.IsNullOrEmpty(txtPreço.Text.Trim()))
@@ -66,7 +66,18 @@ namespace SistemaSupermercado
                 data_cadastro = DateTime.Parse(dataCadastro)
             };
 
-            _repositorio.Salvar(produto);
+            try
+            { 
+                _repositorio.Salvar(produto);
+                MessageBox.Show("Produto cadastrado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao cadastrar o produto: {ex.Message}");
+            }
+
+      
+
             LimparCampos();
             CarregarDadosNoGrid();
            
@@ -115,7 +126,16 @@ namespace SistemaSupermercado
                 data_cadastro = DateTime.Parse(dataCadastro)
             };
 
-            _repositorio.Editar(produto);
+            try
+            {
+                _repositorio.Editar(produto);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar o produto: " + ex.Message);
+                return;
+            }
+            
      
             LimparCampos();
             CarregarDadosNoGrid();
@@ -133,10 +153,25 @@ namespace SistemaSupermercado
 
             if(codigo.Length != 0)
             {
-                _repositorio.Excluir(codigo);
-                LimparCampos();
-                CarregarDadosNoGrid();
-                return;
+                try
+                {
+                    var confirmResult = MessageBox.Show("Tem certeza que deseja excluir este produto?", "Confirmação de Exclusão", MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        _repositorio.Excluir(codigo);
+                        LimparCampos();
+                        CarregarDadosNoGrid();
+                        MessageBox.Show("Produto excluído com sucesso!");
+                        return;
+                    }
+                    MessageBox.Show("Exclusão cancelada.");
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao excluir o produto: {ex.Message}");
+                    return;
+                }
             }
 
         }

@@ -60,7 +60,6 @@
             lblNotaSubtotal = new Label();
             lblResumo = new Label();
             btnNovaCompra = new Button();
-            btnFechar = new Button();
             btnNota = new Button();
             panel1CompraRealizada.SuspendLayout();
             panel1DadosCompra.SuspendLayout();
@@ -121,37 +120,42 @@
             // 
             // txtNumNota
             // 
+            txtNumNota.Enabled = false;
             txtNumNota.Location = new Point(181, 57);
             txtNumNota.Name = "txtNumNota";
-            txtNumNota.Size = new Size(100, 23);
+            txtNumNota.Size = new Size(117, 23);
             txtNumNota.TabIndex = 10;
             // 
             // txtDataCompra
             // 
+            txtDataCompra.Enabled = false;
             txtDataCompra.Location = new Point(181, 95);
             txtDataCompra.Name = "txtDataCompra";
-            txtDataCompra.Size = new Size(100, 23);
+            txtDataCompra.Size = new Size(117, 23);
             txtDataCompra.TabIndex = 9;
             // 
             // txtAtendente
             // 
+            txtAtendente.Enabled = false;
             txtAtendente.Location = new Point(181, 214);
             txtAtendente.Name = "txtAtendente";
-            txtAtendente.Size = new Size(100, 23);
+            txtAtendente.Size = new Size(117, 23);
             txtAtendente.TabIndex = 8;
             // 
             // txtCliente
             // 
+            txtCliente.Enabled = false;
             txtCliente.Location = new Point(181, 135);
             txtCliente.Name = "txtCliente";
-            txtCliente.Size = new Size(100, 23);
+            txtCliente.Size = new Size(117, 23);
             txtCliente.TabIndex = 7;
             // 
             // txtPagto
             // 
+            txtPagto.Enabled = false;
             txtPagto.Location = new Point(181, 174);
             txtPagto.Name = "txtPagto";
-            txtPagto.Size = new Size(100, 23);
+            txtPagto.Size = new Size(117, 23);
             txtPagto.TabIndex = 6;
             // 
             // lblAtendente
@@ -309,23 +313,26 @@
             // 
             // txtNotaSubtotal
             // 
+            txtNotaSubtotal.Enabled = false;
             txtNotaSubtotal.Location = new Point(181, 65);
             txtNotaSubtotal.Name = "txtNotaSubtotal";
-            txtNotaSubtotal.Size = new Size(100, 23);
+            txtNotaSubtotal.Size = new Size(117, 23);
             txtNotaSubtotal.TabIndex = 6;
             // 
             // txtNotaDesconto
             // 
+            txtNotaDesconto.Enabled = false;
             txtNotaDesconto.Location = new Point(181, 108);
             txtNotaDesconto.Name = "txtNotaDesconto";
-            txtNotaDesconto.Size = new Size(100, 23);
+            txtNotaDesconto.Size = new Size(117, 23);
             txtNotaDesconto.TabIndex = 5;
             // 
             // txtNotaTotal
             // 
+            txtNotaTotal.Enabled = false;
             txtNotaTotal.Location = new Point(181, 156);
             txtNotaTotal.Name = "txtNotaTotal";
-            txtNotaTotal.Size = new Size(100, 23);
+            txtNotaTotal.Size = new Size(117, 23);
             txtNotaTotal.TabIndex = 4;
             // 
             // lblNotaTotal
@@ -382,19 +389,6 @@
             btnNovaCompra.UseVisualStyleBackColor = false;
             btnNovaCompra.Click += btnNovaCompra_Click;
             // 
-            // btnFechar
-            // 
-            btnFechar.BackColor = Color.Gainsboro;
-            btnFechar.FlatAppearance.BorderColor = Color.Black;
-            btnFechar.FlatStyle = FlatStyle.Popup;
-            btnFechar.Font = new Font("Segoe UI", 10F);
-            btnFechar.Location = new Point(671, 620);
-            btnFechar.Name = "btnFechar";
-            btnFechar.Size = new Size(133, 35);
-            btnFechar.TabIndex = 22;
-            btnFechar.Text = "Fechar";
-            btnFechar.UseVisualStyleBackColor = false;
-            // 
             // btnNota
             // 
             btnNota.BackColor = Color.Khaki;
@@ -414,7 +408,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(btnNota);
-            Controls.Add(btnFechar);
             Controls.Add(btnNovaCompra);
             Controls.Add(panelResumoCompra);
             Controls.Add(panelItensCompra);
@@ -459,7 +452,6 @@
         private Label lblNotaDesconto;
         private Label lblNotaSubtotal;
         private Button btnNovaCompra;
-        private Button btnFechar;
         private Button btnNota;
         private TextBox txtPagto;
         private TextBox txtNumNota;

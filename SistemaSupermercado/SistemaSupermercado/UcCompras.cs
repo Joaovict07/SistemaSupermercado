@@ -25,7 +25,7 @@ namespace SistemaSupermercado
         private List<Produto> _listaProdutos = new List<Produto>();
         private List<Produto> _listaProdutosComprados = new List<Produto>();
 
-        private void CarregarDadosNoGrid()
+        public void CarregarDadosNoGrid()
         {
             dataGridView2.AutoGenerateColumns = false;
             Codigo.DataPropertyName = "codigo";
@@ -33,8 +33,9 @@ namespace SistemaSupermercado
             EstoqueCompras.DataPropertyName = "quantidade";
             Preco.DataPropertyName = "preco";
 
-            _listaProdutos = _repositorio.Listar();
-            _listaProdutos = _listaProdutos.Where(p => p.quantidade > 0).ToList();
+            _listaProdutos = _repositorio.Listar()
+                .Where(p => p.quantidade > 0 && !_listaProdutosComprados.Any(pc => pc.codigo == p.codigo))
+                .ToList();
             dataGridView2.DataSource = _listaProdutos;
 
         }
@@ -154,6 +155,7 @@ namespace SistemaSupermercado
             CarrinhoTotal.DataPropertyName = "total";
 
             dataGridView3.DataSource = _listaProdutosComprados.ToList();
+            CarregarDadosNoGrid();
 
             txtSubTotal.Text = _listaProdutosComprados.Sum(p => p.total).ToString("C");
             txtTotal.Text = (_listaProdutosComprados.Sum(p => p.total) - Convert.ToDecimal(txtDesconto.Text)).ToString("C");
@@ -166,6 +168,7 @@ namespace SistemaSupermercado
             txtSubTotal.Text = "0,00";
             txtDesconto.Text = "0,00";
             txtTotal.Text = "0,00";
+            CarregarDadosNoGrid();
         }
 
         private void txtDesconto_TextChanged(object sender, EventArgs e)

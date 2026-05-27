@@ -45,6 +45,7 @@ namespace SistemaSupermercado
                 ucProdutos1.Visible = true;
                 ucCompras1.Visible = false;
                 ucCompraRealizada1.Visible = false;
+                ucProdutos1.CarregarDadosNoGrid();
             }
 
         }
@@ -56,6 +57,7 @@ namespace SistemaSupermercado
                 ucProdutos1.Visible = false;
                 ucCompras1.Visible = true;
                 ucCompraRealizada1.Visible = false;
+                ucCompras1.CarregarDadosNoGrid();
             }
 
         }

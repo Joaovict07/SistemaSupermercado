@@ -14,15 +14,10 @@ namespace SistemaSupermercado.Repository
 
         public void Salvar(Produto produto)
         {
-            try
-            {
-                _bancoDeDados.Produtos.Add(produto);
-                _bancoDeDados.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao salvar o produto: {ex.Message}");
-            }
+            
+            _bancoDeDados.Produtos.Add(produto);
+            _bancoDeDados.SaveChanges();
+            
         }
 
         public List<Produto> Listar()
@@ -67,7 +62,6 @@ namespace SistemaSupermercado.Repository
             {
                 _bancoDeDados.Produtos.Remove(produtoExistente);
                 _bancoDeDados.SaveChanges();
-                MessageBox.Show("Produto excluído com sucesso!");
             }
             else
             {
