@@ -75,19 +75,17 @@
             panel1CompraRealizada.BorderStyle = BorderStyle.FixedSingle;
             panel1CompraRealizada.Controls.Add(lblSubtitulo3);
             panel1CompraRealizada.Controls.Add(lblTitulo6);
-            panel1CompraRealizada.Location = new Point(4, 42);
-            panel1CompraRealizada.Margin = new Padding(4, 5, 4, 5);
+            panel1CompraRealizada.Location = new Point(3, 25);
             panel1CompraRealizada.Name = "panel1CompraRealizada";
-            panel1CompraRealizada.Size = new Size(1156, 130);
+            panel1CompraRealizada.Size = new Size(810, 79);
             panel1CompraRealizada.TabIndex = 1;
             // 
             // lblSubtitulo3
             // 
             lblSubtitulo3.AutoSize = true;
-            lblSubtitulo3.Location = new Point(23, 82);
-            lblSubtitulo3.Margin = new Padding(4, 0, 4, 0);
+            lblSubtitulo3.Location = new Point(16, 49);
             lblSubtitulo3.Name = "lblSubtitulo3";
-            lblSubtitulo3.Size = new Size(245, 25);
+            lblSubtitulo3.Size = new Size(161, 15);
             lblSubtitulo3.TabIndex = 1;
             lblSubtitulo3.Text = "Detalhes da compra realizada";
             // 
@@ -95,10 +93,9 @@
             // 
             lblTitulo6.AutoSize = true;
             lblTitulo6.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblTitulo6.Location = new Point(23, 25);
-            lblTitulo6.Margin = new Padding(4, 0, 4, 0);
+            lblTitulo6.Location = new Point(16, 15);
             lblTitulo6.Name = "lblTitulo6";
-            lblTitulo6.Size = new Size(233, 38);
+            lblTitulo6.Size = new Size(159, 25);
             lblTitulo6.TabIndex = 0;
             lblTitulo6.Text = "Nota de Compra";
             // 
@@ -117,60 +114,53 @@
             panel1DadosCompra.Controls.Add(lblDataCompra);
             panel1DadosCompra.Controls.Add(lblDados);
             panel1DadosCompra.Controls.Add(lblNumNota);
-            panel1DadosCompra.Location = new Point(4, 183);
-            panel1DadosCompra.Margin = new Padding(4, 5, 4, 5);
+            panel1DadosCompra.Location = new Point(3, 110);
             panel1DadosCompra.Name = "panel1DadosCompra";
-            panel1DadosCompra.Size = new Size(478, 570);
+            panel1DadosCompra.Size = new Size(335, 343);
             panel1DadosCompra.TabIndex = 2;
             // 
             // txtNumNota
             // 
-            txtNumNota.Location = new Point(259, 95);
-            txtNumNota.Margin = new Padding(4, 5, 4, 5);
+            txtNumNota.Location = new Point(181, 57);
             txtNumNota.Name = "txtNumNota";
-            txtNumNota.Size = new Size(141, 31);
+            txtNumNota.Size = new Size(100, 23);
             txtNumNota.TabIndex = 10;
             // 
             // txtDataCompra
             // 
-            txtDataCompra.Location = new Point(259, 158);
-            txtDataCompra.Margin = new Padding(4, 5, 4, 5);
+            txtDataCompra.Location = new Point(181, 95);
             txtDataCompra.Name = "txtDataCompra";
-            txtDataCompra.Size = new Size(141, 31);
+            txtDataCompra.Size = new Size(100, 23);
             txtDataCompra.TabIndex = 9;
             // 
             // txtAtendente
             // 
-            txtAtendente.Location = new Point(259, 357);
-            txtAtendente.Margin = new Padding(4, 5, 4, 5);
+            txtAtendente.Location = new Point(181, 214);
             txtAtendente.Name = "txtAtendente";
-            txtAtendente.Size = new Size(141, 31);
+            txtAtendente.Size = new Size(100, 23);
             txtAtendente.TabIndex = 8;
             // 
             // txtCliente
             // 
-            txtCliente.Location = new Point(259, 225);
-            txtCliente.Margin = new Padding(4, 5, 4, 5);
+            txtCliente.Location = new Point(181, 135);
             txtCliente.Name = "txtCliente";
-            txtCliente.Size = new Size(141, 31);
+            txtCliente.Size = new Size(100, 23);
             txtCliente.TabIndex = 7;
             // 
             // txtPagto
             // 
-            txtPagto.Location = new Point(259, 290);
-            txtPagto.Margin = new Padding(4, 5, 4, 5);
+            txtPagto.Location = new Point(181, 174);
             txtPagto.Name = "txtPagto";
-            txtPagto.Size = new Size(141, 31);
+            txtPagto.Size = new Size(100, 23);
             txtPagto.TabIndex = 6;
             // 
             // lblAtendente
             // 
             lblAtendente.AutoSize = true;
             lblAtendente.Font = new Font("Segoe UI", 10F);
-            lblAtendente.Location = new Point(26, 363);
-            lblAtendente.Margin = new Padding(4, 0, 4, 0);
+            lblAtendente.Location = new Point(18, 218);
             lblAtendente.Name = "lblAtendente";
-            lblAtendente.Size = new Size(134, 28);
+            lblAtendente.Size = new Size(93, 19);
             lblAtendente.TabIndex = 5;
             lblAtendente.Text = "Atendido por:";
             // 
@@ -178,10 +168,9 @@
             // 
             lblPagto.AutoSize = true;
             lblPagto.Font = new Font("Segoe UI", 10F);
-            lblPagto.Location = new Point(26, 297);
-            lblPagto.Margin = new Padding(4, 0, 4, 0);
+            lblPagto.Location = new Point(18, 178);
             lblPagto.Name = "lblPagto";
-            lblPagto.Size = new Size(203, 28);
+            lblPagto.Size = new Size(144, 19);
             lblPagto.TabIndex = 4;
             lblPagto.Text = "Forma de Pagamento:";
             // 
@@ -189,10 +178,9 @@
             // 
             lblCliente.AutoSize = true;
             lblCliente.Font = new Font("Segoe UI", 10F);
-            lblCliente.Location = new Point(26, 232);
-            lblCliente.Margin = new Padding(4, 0, 4, 0);
+            lblCliente.Location = new Point(18, 139);
             lblCliente.Name = "lblCliente";
-            lblCliente.Size = new Size(76, 28);
+            lblCliente.Size = new Size(54, 19);
             lblCliente.TabIndex = 3;
             lblCliente.Text = "Cliente:";
             // 
@@ -200,10 +188,9 @@
             // 
             lblDataCompra.AutoSize = true;
             lblDataCompra.Font = new Font("Segoe UI", 10F);
-            lblDataCompra.Location = new Point(26, 165);
-            lblDataCompra.Margin = new Padding(4, 0, 4, 0);
+            lblDataCompra.Location = new Point(18, 99);
             lblDataCompra.Name = "lblDataCompra";
-            lblDataCompra.Size = new Size(159, 28);
+            lblDataCompra.Size = new Size(113, 19);
             lblDataCompra.TabIndex = 2;
             lblDataCompra.Text = "Data da Compra:";
             // 
@@ -211,10 +198,9 @@
             // 
             lblDados.AutoSize = true;
             lblDados.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblDados.Location = new Point(23, 32);
-            lblDados.Margin = new Padding(4, 0, 4, 0);
+            lblDados.Location = new Point(16, 19);
             lblDados.Name = "lblDados";
-            lblDados.Size = new Size(179, 28);
+            lblDados.Size = new Size(130, 19);
             lblDados.TabIndex = 1;
             lblDados.Text = "Dados da Compra";
             // 
@@ -222,10 +208,9 @@
             // 
             lblNumNota.AutoSize = true;
             lblNumNota.Font = new Font("Segoe UI", 10F);
-            lblNumNota.Location = new Point(26, 102);
-            lblNumNota.Margin = new Padding(4, 0, 4, 0);
+            lblNumNota.Location = new Point(18, 61);
             lblNumNota.Name = "lblNumNota";
-            lblNumNota.Size = new Size(164, 28);
+            lblNumNota.Size = new Size(115, 19);
             lblNumNota.TabIndex = 0;
             lblNumNota.Text = "Número da Nota:";
             // 
@@ -235,10 +220,9 @@
             panelItensCompra.BorderStyle = BorderStyle.FixedSingle;
             panelItensCompra.Controls.Add(dataGridView4);
             panelItensCompra.Controls.Add(lblItens);
-            panelItensCompra.Location = new Point(491, 183);
-            panelItensCompra.Margin = new Padding(4, 5, 4, 5);
+            panelItensCompra.Location = new Point(344, 110);
             panelItensCompra.Name = "panelItensCompra";
-            panelItensCompra.Size = new Size(669, 570);
+            panelItensCompra.Size = new Size(469, 343);
             panelItensCompra.TabIndex = 3;
             // 
             // dataGridView4
@@ -260,14 +244,13 @@
             dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView4.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, Quantidade, Unitário, Total });
-            dataGridView4.Location = new Point(11, 102);
-            dataGridView4.Margin = new Padding(4, 5, 4, 5);
+            dataGridView4.Location = new Point(8, 61);
             dataGridView4.Name = "dataGridView4";
             dataGridView4.ReadOnly = true;
             dataGridView4.RowHeadersVisible = false;
             dataGridView4.RowHeadersWidth = 62;
             dataGridView4.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView4.Size = new Size(644, 250);
+            dataGridView4.Size = new Size(451, 150);
             dataGridView4.TabIndex = 15;
             // 
             // dataGridViewTextBoxColumn2
@@ -302,10 +285,9 @@
             // 
             lblItens.AutoSize = true;
             lblItens.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblItens.Location = new Point(31, 30);
-            lblItens.Margin = new Padding(4, 0, 4, 0);
+            lblItens.Location = new Point(22, 18);
             lblItens.Name = "lblItens";
-            lblItens.Size = new Size(166, 28);
+            lblItens.Size = new Size(119, 19);
             lblItens.TabIndex = 0;
             lblItens.Text = "Itens da Compra";
             // 
@@ -320,44 +302,39 @@
             panelResumoCompra.Controls.Add(lblNotaDesconto);
             panelResumoCompra.Controls.Add(lblNotaSubtotal);
             panelResumoCompra.Controls.Add(lblResumo);
-            panelResumoCompra.Location = new Point(4, 765);
-            panelResumoCompra.Margin = new Padding(4, 5, 4, 5);
+            panelResumoCompra.Location = new Point(3, 459);
             panelResumoCompra.Name = "panelResumoCompra";
-            panelResumoCompra.Size = new Size(478, 332);
+            panelResumoCompra.Size = new Size(335, 200);
             panelResumoCompra.TabIndex = 4;
             // 
             // txtNotaSubtotal
             // 
-            txtNotaSubtotal.Location = new Point(259, 108);
-            txtNotaSubtotal.Margin = new Padding(4, 5, 4, 5);
+            txtNotaSubtotal.Location = new Point(181, 65);
             txtNotaSubtotal.Name = "txtNotaSubtotal";
-            txtNotaSubtotal.Size = new Size(141, 31);
+            txtNotaSubtotal.Size = new Size(100, 23);
             txtNotaSubtotal.TabIndex = 6;
             // 
             // txtNotaDesconto
             // 
-            txtNotaDesconto.Location = new Point(259, 180);
-            txtNotaDesconto.Margin = new Padding(4, 5, 4, 5);
+            txtNotaDesconto.Location = new Point(181, 108);
             txtNotaDesconto.Name = "txtNotaDesconto";
-            txtNotaDesconto.Size = new Size(141, 31);
+            txtNotaDesconto.Size = new Size(100, 23);
             txtNotaDesconto.TabIndex = 5;
             // 
             // txtNotaTotal
             // 
-            txtNotaTotal.Location = new Point(259, 260);
-            txtNotaTotal.Margin = new Padding(4, 5, 4, 5);
+            txtNotaTotal.Location = new Point(181, 156);
             txtNotaTotal.Name = "txtNotaTotal";
-            txtNotaTotal.Size = new Size(141, 31);
+            txtNotaTotal.Size = new Size(100, 23);
             txtNotaTotal.TabIndex = 4;
             // 
             // lblNotaTotal
             // 
             lblNotaTotal.AutoSize = true;
             lblNotaTotal.Font = new Font("Segoe UI", 10F);
-            lblNotaTotal.Location = new Point(26, 267);
-            lblNotaTotal.Margin = new Padding(4, 0, 4, 0);
+            lblNotaTotal.Location = new Point(18, 160);
             lblNotaTotal.Name = "lblNotaTotal";
-            lblNotaTotal.Size = new Size(160, 28);
+            lblNotaTotal.Size = new Size(113, 19);
             lblNotaTotal.TabIndex = 3;
             lblNotaTotal.Text = "Total da Compra:";
             // 
@@ -365,10 +342,9 @@
             // 
             lblNotaDesconto.AutoSize = true;
             lblNotaDesconto.Font = new Font("Segoe UI", 10F);
-            lblNotaDesconto.Location = new Point(26, 187);
-            lblNotaDesconto.Margin = new Padding(4, 0, 4, 0);
+            lblNotaDesconto.Location = new Point(18, 112);
             lblNotaDesconto.Name = "lblNotaDesconto";
-            lblNotaDesconto.Size = new Size(139, 28);
+            lblNotaDesconto.Size = new Size(98, 19);
             lblNotaDesconto.TabIndex = 2;
             lblNotaDesconto.Text = "Desconto (R$):";
             // 
@@ -376,10 +352,9 @@
             // 
             lblNotaSubtotal.AutoSize = true;
             lblNotaSubtotal.Font = new Font("Segoe UI", 10F);
-            lblNotaSubtotal.Location = new Point(26, 115);
-            lblNotaSubtotal.Margin = new Padding(4, 0, 4, 0);
+            lblNotaSubtotal.Location = new Point(18, 69);
             lblNotaSubtotal.Name = "lblNotaSubtotal";
-            lblNotaSubtotal.Size = new Size(91, 28);
+            lblNotaSubtotal.Size = new Size(63, 19);
             lblNotaSubtotal.TabIndex = 1;
             lblNotaSubtotal.Text = "Subtotal:";
             // 
@@ -387,10 +362,9 @@
             // 
             lblResumo.AutoSize = true;
             lblResumo.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblResumo.Location = new Point(23, 43);
-            lblResumo.Margin = new Padding(4, 0, 4, 0);
+            lblResumo.Location = new Point(16, 26);
             lblResumo.Name = "lblResumo";
-            lblResumo.Size = new Size(195, 28);
+            lblResumo.Size = new Size(141, 19);
             lblResumo.TabIndex = 0;
             lblResumo.Text = "Resumo da Compra";
             // 
@@ -400,10 +374,9 @@
             btnNovaCompra.FlatAppearance.BorderColor = Color.Black;
             btnNovaCompra.FlatStyle = FlatStyle.Popup;
             btnNovaCompra.Font = new Font("Segoe UI", 10F);
-            btnNovaCompra.Location = new Point(603, 795);
-            btnNovaCompra.Margin = new Padding(4, 5, 4, 5);
+            btnNovaCompra.Location = new Point(422, 477);
             btnNovaCompra.Name = "btnNovaCompra";
-            btnNovaCompra.Size = new Size(190, 58);
+            btnNovaCompra.Size = new Size(133, 35);
             btnNovaCompra.TabIndex = 21;
             btnNovaCompra.Text = "Nova Compra";
             btnNovaCompra.UseVisualStyleBackColor = false;
@@ -415,10 +388,9 @@
             btnFechar.FlatAppearance.BorderColor = Color.Black;
             btnFechar.FlatStyle = FlatStyle.Popup;
             btnFechar.Font = new Font("Segoe UI", 10F);
-            btnFechar.Location = new Point(959, 1033);
-            btnFechar.Margin = new Padding(4, 5, 4, 5);
+            btnFechar.Location = new Point(671, 620);
             btnFechar.Name = "btnFechar";
-            btnFechar.Size = new Size(190, 58);
+            btnFechar.Size = new Size(133, 35);
             btnFechar.TabIndex = 22;
             btnFechar.Text = "Fechar";
             btnFechar.UseVisualStyleBackColor = false;
@@ -429,10 +401,9 @@
             btnNota.FlatAppearance.BorderColor = Color.Black;
             btnNota.FlatStyle = FlatStyle.Popup;
             btnNota.Font = new Font("Segoe UI", 10F);
-            btnNota.Location = new Point(840, 795);
-            btnNota.Margin = new Padding(4, 5, 4, 5);
+            btnNota.Location = new Point(588, 477);
             btnNota.Name = "btnNota";
-            btnNota.Size = new Size(190, 58);
+            btnNota.Size = new Size(133, 35);
             btnNota.TabIndex = 23;
             btnNota.Text = "Visualizar Nota";
             btnNota.UseVisualStyleBackColor = false;
@@ -440,7 +411,7 @@
             // 
             // UcCompraRealizada
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(btnNota);
             Controls.Add(btnFechar);
@@ -449,9 +420,8 @@
             Controls.Add(panelItensCompra);
             Controls.Add(panel1DadosCompra);
             Controls.Add(panel1CompraRealizada);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "UcCompraRealizada";
-            Size = new Size(1166, 1103);
+            Size = new Size(816, 662);
             panel1CompraRealizada.ResumeLayout(false);
             panel1CompraRealizada.PerformLayout();
             panel1DadosCompra.ResumeLayout(false);

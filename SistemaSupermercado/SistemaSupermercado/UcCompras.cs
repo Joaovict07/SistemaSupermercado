@@ -202,9 +202,8 @@ namespace SistemaSupermercado
                 };
                 _repositorioProdutoCompra.Salvar(compraProduto);
                 _repositorio.AtualizarEstoque(produto.codigo, produto.quantidade);
-                CarregarDadosNoGrid();
             }
-            AoEnviarLista?.Invoke(_listaProdutosComprados, compra);
+            AoEnviarLista?.Invoke(new List<Produto>(_listaProdutosComprados), compra);
             _repositorioCompra.Salvar(compra);
             _listaProdutosComprados.Clear();
             dataGridView3.DataSource = null;
@@ -213,7 +212,8 @@ namespace SistemaSupermercado
             txtTotal.Text = "0,00";
             txtCarrinho.Text = "";
             numericUpDown1.Value = 0;
-            
+            CarregarDadosNoGrid();
+
         }
     }
 }

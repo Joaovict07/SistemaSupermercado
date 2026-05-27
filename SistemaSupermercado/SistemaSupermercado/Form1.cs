@@ -15,12 +15,12 @@ namespace SistemaSupermercado
             
         }
         private void ReceberDados_E_TrocarTela(List<Produto> listaRecebida, Compras compra)
-        {
-            ucCompraRealizada1.CompraRealizada(listaRecebida, compra);
+        {  
             ucCompras1.Visible = false;
             ucProdutos1.Visible = false;
             ucCompraRealizada1.Visible = true;
             ucCompraRealizada1.BringToFront();
+            ucCompraRealizada1.CompraRealizada(listaRecebida, compra);
         }
 
         private void panelPrincipal_Paint(object sender, PaintEventArgs e)
